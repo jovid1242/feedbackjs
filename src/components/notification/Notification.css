@@ -1,0 +1,20 @@
+.notfication {
+    position: absolute;
+    width: inherit;
+    height: 60px;
+    z-index: 999999;
+    /* border-radius: 10px; */
+    margin-top: -5.5rem;
+    transition: 1s;
+}
+
+.notfication span {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+.hide {
+    display: none;
+}
