@@ -6,6 +6,10 @@ const validate = {
         if (!state.phone) {
             return { error: true, message: 'Запольните поле номер телефона  😉' };
         }
+        const phoneNum = /^((992|\+992)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,12}$/;
+        if (!phoneNum.test(state.phone)) {
+            return { error: true, message: 'Неверный номер телефон!! 😊 Пример: +992XXXXXXXXX' }
+        }
         if (!state.email) {
             return { error: true, message: 'Запольните поле email' };
         }
@@ -16,10 +20,7 @@ const validate = {
         if (!state.message) {
             return { error: true, message: 'Запольните поле Сообщение' };
         }
-        // const phoneNum = /^((992|\+992)[\- ]?)?(\(?\d{3,4}\)?[\- ]?)?[\d\- ]{5,10}$/;
-        // if (!phoneNum.test(state)) {
-        //     return { error: true, message: 'Неверный номер телефон!! 😊 Пример: +992XXXXXXXXX' }
-        // }
+
         // if (state.length < 13) {
         //     return { error: true, message: 'Номер телефон дольжен содержать минимум 9 символов 😱' };
         // }
