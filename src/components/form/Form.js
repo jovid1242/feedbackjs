@@ -24,7 +24,7 @@ export default function Form() {
             http.post('feedback', user)
                 .then((response) => {
                     console.log(response);
-                    NotificationManager.success('Republic', 'Успещно', 3000);
+                    NotificationManager.success('Спасибо! Ваша заявка принята!', 'Anor.tj', 4000);
                     setNotificationActive(true)
                     setTimeout(() => {
                         setNotificationActive(false)
@@ -39,7 +39,7 @@ export default function Form() {
     const valideFeedback = () => {
         const err = validation.cartValidation(user)
         if (err.error) {
-            NotificationManager.warning(err.message, 'Ошибка', 3000);
+            NotificationManager.warning(err.message, 'Ошибка', 1000);
             return false
         }
         return true
